@@ -185,7 +185,32 @@ main .item {
   padding-bottom: 60px;
 }
 
+.full-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  overflow: auto;
+}
+.full-item > div {
+  width: 600px;
+
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: #fafafa;
+  border-radius: 9px;
+}
 main .item img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  transition: transform 500ms ease;
+  cursor: pointer;
+}
+.full-item img {
   width: 100%;
   border-radius: 10px 10px 0 0;
   transition: transform 500ms ease;
@@ -195,8 +220,11 @@ main .item img {
 main .item img:hover {
   transform: scale(1.05);
 }
-
-main .add-to-cart {
+.full-item img:hover {
+  transform: scale(1.05);
+}
+main .add-to-cart,
+.full-item .add-to-cart {
   overflow: visible;
   width: 32px;
   height: 32px;
@@ -213,20 +241,32 @@ main .add-to-cart {
   font-weight: 600;
 }
 
-main .add-to-cart:hover {
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover {
   transform: scale(1.5) translateY(-5px);
 }
+
 main h2 {
   margin: 10px 20px;
   color: #333;
 }
-
+.full-item h2 {
+  margin: 20px 20px;
+  color: #333;
+}
 main b {
   color: #5fa365;
   position: absolute;
   left: 30px;
   bottom: 20px;
   font-weight: 600;
+}
+.full-item b {
+  color: #5fa365;
+  font-weight: 600;
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
 }
 footer {
   text-align: center;
